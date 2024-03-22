@@ -13,7 +13,8 @@ The created Shapes and ROIs will be named according to the corresponding grey-va
 
 
 ## 3. Package dependencies
-The script tries to import [omero_rois](https://github.com/ome/omero-rois/) and [scikit-image](https://github.com/scikit-image/scikit-image) and will give you feedback if those are not installed. Please consult your OMERO system-admin for installation.<br>
+For the creation of the `Polygon` ROIs I rely on [ezomero](https://github.com/TheJacksonLaboratory/ezomero), a fantastic toolbox to make life easier for OMERO devs.<br>
+Additionally, the script tries to import [omero_rois](https://github.com/ome/omero-rois/) and [scikit-image](https://github.com/scikit-image/scikit-image) and will give you feedback if those are not installed. Please consult your OMERO system-admin for installation.<br>
 The reason two packages are needed, is to give you the option what type of ``omero.model.Shape`` you want to have for your ROI.<br>
 >What is a **Shape**?:<br>
 An OMERO ROI (`omero.model.Roi`) is a container object consisting of one or multiple Shapes (e.g. a Line, Polyline, Polygon, Mask, etc.) which constitute the actual forms/shapes you see in the OMERO.iviewer.
