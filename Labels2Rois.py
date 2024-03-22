@@ -115,7 +115,7 @@ def create_contours(labelimage, algorithm):
 
         for i in range(1, labelimage.max() + 1):
             mask = (labelimage == i)
-            contour = omeroi.mask_from_label_image(mask, text=str(i))
+            contour = omeroi.mask_from_binary_image(mask, text=str(i))
             contourDict[i] = contour
         # check if number of contours equals number of grey values
         # assuming that each grey value got correctly converted to a contour
@@ -172,7 +172,7 @@ def upload_ROIs(contour_dict, parent_id, algorithm, conn):
         update = conn.getUpdateService()
         for greyValue, shape in contour_dict.items():
             roi = RoiI()
-            roi.name = greyValue
+            roi.name = rstring(greyValue)
             roi.image = conn.getObject("Image",parent_id)._obj
             roi.addShape(shape)
             update = conn.getUpdateService()
