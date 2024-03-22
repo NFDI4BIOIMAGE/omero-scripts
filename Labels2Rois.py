@@ -413,7 +413,7 @@ def run_script():
     shape_types = [rstring("Polygon"), rstring("Mask")]
 
     client = scripts.client(
-        'MiN_Rois2Labels.py',
+        'Labels2Rois',
         """
         Creates (named) Rois from Label images.\n
         For correct mapping of the Rois the Label image must have\n
@@ -437,12 +437,6 @@ def run_script():
             " will create an outline around it.\nIt also determines which " +
             "algorithm will be used. The 'Mask' algorithm is faster if the " +
             "ROIs do not touch.", values=shape_types, default="Polygon"),
-
-        # not relevant for now as we cannot run find_contours() on the whole image
-        # without having to mask/crop anyways for grey values
-        # scripts.Bool(
-        #     "Do_your_ROIs_touch?", optional=False, grouping="4", default=False,
-        #     description="If you have non-touching labels/Rois the algorithm will run much faster."),
 
         scripts.Bool(
             "Delete_Label_Image", optional=False, grouping="5", default=False,
