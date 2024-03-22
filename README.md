@@ -4,11 +4,12 @@ This is an OMERO.web script to convert grey scale label images into OMERO ROIs.<
 Depending on the python packages installed in the OMERO server virtual environment one can choose between Poylgon or Mask as
 a Shape for the ROIs.<br>
 
+
 ## 2. Naming convention
 For now the script relies on the label images having the same exact name as the original image with "-label" added to the end.<br>
 For example `Larvae_3w_400l_trRL.ome.tiff` will need a label image `Larvae_3w_400l_trRL-label.ome.tif` for the script to recognize it.<br>
-This label image needs to be in the same dataset as the its "original" image.
-
+This label image needs to be in the same dataset as the its "original" image.<br>
+The created Shapes and ROIs will be named according to the corresponding grey-value their original label had.
 
 
 ## 3. Package dependencies
@@ -19,7 +20,6 @@ An OMERO ROI (`omero.model.Roi`) is a container object consisting of one or mult
 
 If you want to avoid additional packages and the related dependency-bloat you can still create Polygon Shapes as is, with just a small increase in script runtime.<br>
 To achieve that I refactored the underlying Cython code from the relevant `scikit-image` function into "pure" Python, therefore having only `numpy` as dependency.
-
 
 
 ### 3.1 Mask Shape
