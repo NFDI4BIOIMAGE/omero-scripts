@@ -443,7 +443,9 @@ def run_script():
             description="Deletes the Label image(s) after the conversion to Rois is done."),
        
         authors=["Jens Wendt"],
-        contact="https://forum.image.sc/tag/omero, jens.wendt@uni-muenster.de")
+        contact="https://forum.image.sc/tag/omero, jens.wendt@uni-muenster.de",
+        version="0.1"
+        )
 
     try:
         script_params = client.getInputs(unwrap=True)
