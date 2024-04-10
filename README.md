@@ -38,7 +38,7 @@ PyWavelets, cycler, decorator, imageion, kiwisolver, matplotlib, networkx, scipy
 
 Here is the dependency tree (made with `pipdeptree`) for the `scikit-image` installation we performed on our server (**green**: existing packages, **blue**: newly installed packages):
 
-<img src="dependencies.svg" height="350">
+<img src="dependencies_for_scikit-image.svg" height="350">
 
 ## 3. Caveats
 - At the moment the input Data type is limited to Datasets and Images.<br>
